@@ -1,0 +1,42 @@
+
+Running Gradle task 'bundleRelease'...                          
+
+FAILURE: Build completed with 2 failures.
+
+1: Task failed with an exception.
+-----------
+* Where:
+Build file 'C:\Users\ganap\.gemini\antigravity\scratch\curry-delivery-platform\customer_app\android\app\build.gradle' line: 5
+
+* What went wrong:
+An exception occurred applying plugin request [id: 'dev.flutter.flutter-gradle-plugin']
+> Failed to apply plugin 'dev.flutter.flutter-gradle-plugin'.
+   > Must provide Flutter source directory
+
+* Try:
+> Run with --stacktrace option to get the stack trace.
+> Run with --info or --debug option to get more log output.
+> Run with --scan to get full insights.
+> Get more help at https://help.gradle.org.
+==============================================================================
+
+2: Task failed with an exception.
+-----------
+* Where:
+Build file 'C:\Users\ganap\.gemini\antigravity\scratch\curry-delivery-platform\customer_app\android\app\build.gradle' line: 5
+
+* What went wrong:
+An exception occurred applying plugin request [id: 'dev.flutter.flutter-gradle-plugin']
+> Failed to apply plugin 'dev.flutter.flutter-gradle-plugin'.
+   > Must provide Flutter source directory
+
+* Try:
+> Run with --stacktrace option to get the stack trace.
+> Run with --info or --debug option to get more log output.
+> Run with --scan to get full insights.
+> Get more help at https://help.gradle.org.
+==============================================================================
+
+BUILD FAILED in 2s
+Running Gradle task 'bundleRelease'...                              4.0s
+Gradle task bundleRelease failed with exit code 1

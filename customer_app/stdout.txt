@@ -1,0 +1,6 @@
+
+Running Gradle task 'bundleRelease'...                          
+Running Gradle task 'bundleRelease'...                            450.2s
+Retrying Gradle Build: #1, wait time: 100ms
+Running Gradle task 'bundleRelease'...                          
+Running Gradle task 'bundleRelease'...                             55.0s

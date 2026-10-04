@@ -1,0 +1,61 @@
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Could not resolve all files for configuration 'classpath'.
+> Could not resolve org.jetbrains.kotlin:kotlin-gradle-plugin-api:1.9.22.
+  Required by:
+      unspecified:unspecified:unspecified > org.jetbrains.kotlin.android:org.jetbrains.kotlin.android.gradle.plugin:1.9.22 > org.jetbrains.kotlin:kotlin-gradle-plugin:1.9.22
+      unspecified:unspecified:unspecified > org.jetbrains.kotlin.android:org.jetbrains.kotlin.android.gradle.plugin:1.9.22 > org.jetbrains.kotlin:kotlin-gradle-plugin:1.9.22 > org.jetbrains.kotlin:kotlin-gradle-plugins-bom:1.9.22
+   > Could not resolve org.jetbrains.kotlin:kotlin-gradle-plugin-api:1.9.22.
+      > Could not get resource 'https://repo.maven.apache.org/maven2/org/jetbrains/kotlin/kotlin-gradle-plugin-api/1.9.22/kotlin-gradle-plugin-api-1.9.22.pom'.
+         > Could not GET 'https://repo.maven.apache.org/maven2/org/jetbrains/kotlin/kotlin-gradle-plugin-api/1.9.22/kotlin-gradle-plugin-api-1.9.22.pom'.
+            > Got socket exception during request. It might be caused by SSL misconfiguration
+               > Network is unreachable: no further information
+   > Could not resolve org.jetbrains.kotlin:kotlin-gradle-plugin-api:1.9.22.
+      > Could not get resource 'https://plugins.gradle.org/m2/org/jetbrains/kotlin/kotlin-gradle-plugin-api/1.9.22/kotlin-gradle-plugin-api-1.9.22.pom'.
+         > Could not GET 'https://repo.maven.apache.org/maven2/org/jetbrains/kotlin/kotlin-gradle-plugin-api/1.9.22/kotlin-gradle-plugin-api-1.9.22.pom'.
+            > Network is unreachable: no further information
+> Could not resolve org.jetbrains.kotlin:kotlin-gradle-plugin-model:1.9.22.
+  Required by:
+      unspecified:unspecified:unspecified > org.jetbrains.kotlin.android:org.jetbrains.kotlin.android.gradle.plugin:1.9.22 > org.jetbrains.kotlin:kotlin-gradle-plugin:1.9.22
+      unspecified:unspecified:unspecified > org.jetbrains.kotlin.android:org.jetbrains.kotlin.android.gradle.plugin:1.9.22 > org.jetbrains.kotlin:kotlin-gradle-plugin:1.9.22 > org.jetbrains.kotlin:kotlin-gradle-plugins-bom:1.9.22
+   > Could not resolve org.jetbrains.kotlin:kotlin-gradle-plugin-model:1.9.22.
+      > Could not get resource 'https://repo.maven.apache.org/maven2/org/jetbrains/kotlin/kotlin-gradle-plugin-model/1.9.22/kotlin-gradle-plugin-model-1.9.22.pom'.
+         > Could not GET 'https://repo.maven.apache.org/maven2/org/jetbrains/kotlin/kotlin-gradle-plugin-model/1.9.22/kotlin-gradle-plugin-model-1.9.22.pom'.
+            > Got socket exception during request. It might be caused by SSL misconfiguration
+               > Network is unreachable: no further information
+   > Could not resolve org.jetbrains.kotlin:kotlin-gradle-plugin-model:1.9.22.
+      > Could not get resource 'https://plugins.gradle.org/m2/org/jetbrains/kotlin/kotlin-gradle-plugin-model/1.9.22/kotlin-gradle-plugin-model-1.9.22.pom'.
+         > Could not GET 'https://repo.maven.apache.org/maven2/org/jetbrains/kotlin/kotlin-gradle-plugin-model/1.9.22/kotlin-gradle-plugin-model-1.9.22.pom'.
+            > Network is unreachable: no further information
+
+* Try:
+> Run with --stacktrace option to get the stack trace.
+> Run with --info or --debug option to get more log output.
+> Run with --scan to get full insights.
+> Get more help at https://help.gradle.org.
+
+BUILD FAILED in 7m 28s
+[!] Gradle threw an error while downloading artifacts from the network.
+
+FAILURE: Build failed with an exception.
+
+* Where:
+Build file 'C:\Users\ganap\.gemini\antigravity\scratch\curry-delivery-platform\customer_app\android\app\build.gradle' line: 2
+
+* What went wrong:
+An exception occurred applying plugin request [id: 'com.android.application']
+> Failed to apply plugin 'com.android.internal.application'.
+   > The option 'android.bundle.enableUncompressedNativeLibs' is deprecated.
+     The current default is 'true'.
+     It was removed in version 8.1 of the Android Gradle plugin.
+
+* Try:
+> Run with --stacktrace option to get the stack trace.
+> Run with --info or --debug option to get more log output.
+> Run with --scan to get full insights.
+> Get more help at https://help.gradle.org.
+
+BUILD FAILED in 54s
+Gradle task bundleRelease failed with exit code 1

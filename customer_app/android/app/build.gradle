@@ -1,0 +1,90 @@
+plugins {
+    id "com.android.application"
+    id "kotlin-android"
+    // The Flutter Gradle Plugin must be applied after the Android and Kotlin Gradle plugins.
+    id "dev.flutter.flutter-gradle-plugin"
+    id "com.google.gms.google-services"
+}
+
+def localProperties = new Properties()
+def localPropertiesFile = rootProject.file("local.properties")
+if (localPropertiesFile.exists()) {
+    localPropertiesFile.withReader("UTF-8") { reader ->
+        localProperties.load(reader)
+    }
+}
+
+def flutterVersionCode = "29"
+def flutterVersionName = "1.1.29"
+
+def keystoreProperties = new Properties()
+def keystorePropertiesFile = rootProject.file('key.properties')
+if (keystorePropertiesFile.exists()) {
+    keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+}
+
+android {
+    namespace = "com.univfoods.curry"
+    compileSdk = 35
+    ndkVersion = flutter.ndkVersion
+
+    compileOptions {
+        coreLibraryDesugaringEnabled true
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+
+    signingConfigs {
+        release {
+            keyAlias = keystoreProperties['keyAlias']
+            keyPassword = keystoreProperties['keyPassword']
+            storeFile = keystoreProperties['storeFile'] ? file(keystoreProperties['storeFile']) : null
+            storePassword = keystoreProperties['storePassword']
+        }
+    }
+
+    defaultConfig {
+        applicationId = "com.univfoods.curry"
+        minSdkVersion = flutter.minSdkVersion
+        targetSdk = 35
+        versionCode = flutterVersionCode.toInteger()
+        versionName = flutterVersionName
+        multiDexEnabled true
+    }
+
+    buildTypes {
+        release {
+            signingConfig = signingConfigs.release
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            // Added for Play Store debug symbols warning
+            ndk {
+                debugSymbolLevel 'FULL'
+            }
+        }
+    }
+
+    packaging {
+        jniLibs {
+            // Needed workaround for Flutter 3.22 to pass 16KB requirements
+            useLegacyPackaging = true
+        }
+    }
+}
+
+flutter {
+    source = "../.."
+}
+
+dependencies {
+    coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:2.1.4'
+    implementation "androidx.multidex:multidex:2.0.1"
+    // 🛡️ APP CHECK DEBUG PROVIDER (Mandatory for Silent OTP without Chrome in Debug mode)
+    debugImplementation 'com.google.firebase:firebase-appcheck-debug:17.1.0'
+}
+

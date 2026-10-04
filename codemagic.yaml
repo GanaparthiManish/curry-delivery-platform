@@ -1,0 +1,35 @@
+workflows:
+  ios-workflow:
+    name: iOS Customer App Preview
+    working_directory: customer_app
+    instance_type: mac_mini_m1
+    max_build_duration: 60
+    environment:
+      flutter: stable
+      xcode: latest
+      cocoapods: default
+    scripts:
+      - name: Flutter configuration
+        script: |
+          flutter config --no-analytics
+          flutter precache --ios
+      - name: Flutter pub get
+        script: |
+          flutter pub get
+      - name: Install CocoaPods
+        script: |
+          cd ios
+          pod repo update
+          pod install
+      - name: Build iOS Simulator (for App Preview)
+        script: |
+          flutter pub get
+          flutter build ios --simulator --debug --no-codesign
+      - name: Build iOS Release (for Download)
+        script: |
+          flutter pub get
+          flutter build ios --release --no-codesign
+    artifacts:
+      - build/ios/iphonesimulator/*.app
+      - build/ios/iphoneos/*.app
+      - build/ios/ipa/*.ipa
